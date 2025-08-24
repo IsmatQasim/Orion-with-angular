@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg shadow">
+  <div class="container-fluid">
+    <button class="navbar-toggler ms-auto" type="button" (click)="isCollapsed = !isCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" [class.show]="!isCollapsed" id="navbarNav">
+
+      <button class="navbar-close d-lg-none" type="button" (click)="isCollapsed = true">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <ul class="navbar-nav custom-nav-ul">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/book-a-flight" routerLinkActive="active">Book a Flight</a>
+        </li>
+
+        <li ngbDropdown class="nav-item dropdown " [class.active]="isPnrActive()">
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle role="button" id="pnrDropdown">
+            PNRs
+          </a>
+          <ul ngbDropdownMenu aria-labelledby="pnrDropdown" class="dropdown-menu">
+            <li class="mx-2">
+              <a class="dropdown-item" routerLink="/pnrs" routerLinkActive="active">Import PNRs</a>
+            </li>
+            <li class="w-md-75 m-0">
+              <hr class="dropdown-divider">
+            </li>
+            <li class="mx-2">
+              <a class="dropdown-item" routerLink="/booking-records" routerLinkActive="active">Booking Records</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/sales-ceiling" routerLinkActive="active">Sales Ceiling</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/policy " routerLinkActive="active">Policies</a>
+        </li>
+
+        <li ngbDropdown class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle role="button" id="reportsDropdown">
+            Reports
+          </a>
+          <ul ngbDropdownMenu aria-labelledby="reportsDropdown" class="dropdown-menu custom-dropdown">
+            <li class="mx-2">
+              <a class="dropdown-item" routerLink="/user-list">Sales</a>
+            </li>
+            <li class="w-md-75 m-0">
+              <hr class="dropdown-divider">
+            </li>
+            <li class="mx-2">
+              <a class="dropdown-item" href="#">Refunding Reports</a>
+            </li>
+            <li class="w-md-75 m-0">
+              <hr class="dropdown-divider">
+            </li>
+            <li class="mx-2">
+              <a class="dropdown-item" href="#">Void Reports</a>
+            </li>
+            <li class="w-md-75 m-0">
+              <hr class="dropdown-divider">
+            </li>
+            <li class="mx-2">
+              <a class="dropdown-item" href="#">Ledger Reports</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user-list" routerLinkActive="active">User List</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

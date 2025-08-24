@@ -1,0 +1,134 @@
+<section id="dashboard" class="mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="row" id="row">
+          <div class="col-12 col-lg-3 mb-3">
+            <div class="cards">
+              <div class="card-1 mt-1 w-100 w-lg-auto shadow">
+                <div class="card-details p-4">
+                  <span class="material-icons" style="color:#ffffff; font-size:28px;">
+                    flight
+                  </span>
+                  <h5 class="text-white mt-3">Total Bookings</h5>
+                  <p class="text-white">890</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-3 mb-3">
+            <div class="cards">
+              <div class="card-2 mt-1 w-100 w-lg-auto shadow">
+                <div class="card-details p-4">
+                  <span class="material-icons" style="color:#ffffff; font-size:28px;">
+                    trending_up
+                  </span>
+                  <h5 class="text-white mt-3">Total Sales</h5>
+                  <p class="text-white">$52,945</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-3 mb-3">
+            <div class="cards">
+              <div class="card-3 mt-1 w-100 w-lg-auto shadow">
+                <div class="card-details p-4">
+                  <span class="material-icons" style="color:#ffffff; font-size:28px;">
+                    person
+                  </span>
+                  <h5 class="text-white mt-3" >Registered Users</h5>
+                  <p class="text-white">24.5K</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-3 mb-3">
+            <div class="cards">
+              <div class="card-4 mt-1 w-100 w-lg-auto shadow">
+                <div class="card-details p-4">
+                  <span class="material-icons" style="color:#ffffff; font-size:28px;">
+                    star
+                  </span>
+                  <h5 class="text-white mt-3">Ratings</h5>
+                  <p class="text-white">6K</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="row" id="row">
+          <div class="col-12 my-2">
+            <div class="total shadow">
+              <div class="d-flex justify-content-evenly bg-white p-1 border">
+                <h5  [class.active]="activeCard === 1" (click)="activeCard=1">Credit</h5>
+                <h5  [class.active]="activeCard === 2" (click)="activeCard=2">Booking</h5>
+                <h5  [class.active]="activeCard === 3" (click)="activeCard=3">Ratings</h5>
+              </div>
+
+              <div class="bg-light d-flex flex-column flex-md-row justify-content-evenly total-box border">
+                <div class="bg-white total-box-inner">
+                  <div class="d-flex justify-content-evenly align-items-center">
+                    <h5 class="fs-5">$345,764 <br> Total Est : Spend</h5>
+                    <img src="assets/Loader1.png" alt="" class="w-25">
+                  </div>
+                </div>
+                <div class="bg-white total-box-inner">
+                  <div class="d-flex justify-content-evenly align-items-center">
+                    <h5 class="fs-5">$345,764 <br> Total Est : Spend</h5>
+                    <img src="assets/Loader1.png" alt="" class="w-25">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="row">
+          <div class="col-12 border shadow chart-card">
+            <h5 class="text-primary">Sales Report</h5>
+            <hr>
+            <canvas id="salesChart" baseChart [data]="salesChartData" [options]="salesChartOptions" [type]="'line'">
+            </canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="row">
+          <div class="col-12 mb-2">
+            <div class="agency-user border shadow w-lg-auto mx-lg-3">
+              <div class="px-1">
+                <h5 class="mx-2">Agency Users</h5>
+              </div>
+              <div class="d-inline agency-img">
+                <img src="assets/Package1.png" alt="">
+                <img src="assets/Package2.png" alt="">
+                <img src="assets/Package1.png" alt="">
+                <img src="assets/Package2.png" alt="">
+                <img src="assets/Package1.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-lg-5 border p-0 mx-lg-5 shadow">
+            <div class="bg-light p-3 border-bottom rounded-top">
+              <h5 class="text-primary m-0">Policy Usage</h5>
+            </div>
+            <div class="p-3"> <canvas
+              id="policyChart"
+               baseChart [data]="policyChartData" [options]="policyChartOptions"
+                [type]="'doughnut'">
+              </canvas> <canvas id="policyChart"></canvas>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
